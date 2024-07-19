@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Paths tests > shows a message when there are no paths 1`] = `
+<p
+  class="_emptyPaths_cb9680"
+>
+  Sorry, there's no talent path available at this moment
+</p>
+`;

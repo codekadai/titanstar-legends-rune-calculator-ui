@@ -1,0 +1,490 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <html
+        lang="en"
+      >
+        <body>
+          <div
+            class="_background_d55e39"
+          >
+            <main
+              class="_main_d55e39"
+            >
+              <section
+                class="_container_d55e39"
+              >
+                <h1
+                  class="_title_d55e39"
+                >
+                  TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
+                </h1>
+                <div
+                  class="_treeWrapper_068057"
+                >
+                  <div
+                    class="_paths_cb9680"
+                  >
+                    <div
+                      class="_pathWrapper_3067b9"
+                    >
+                      <h2
+                        class="_pathTitle_3067b9"
+                      >
+                        Talent Path
+                         
+                        1
+                      </h2>
+                      <div
+                        class="_path_3067b9"
+                      >
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="building"
+                              style="background-position: -0px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="cooking"
+                              style="background-position: -50px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="baking"
+                              style="background-position: -100px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="leading"
+                              style="background-position: -150px 50px;"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="_pathWrapper_3067b9"
+                    >
+                      <h2
+                        class="_pathTitle_3067b9"
+                      >
+                        Talent Path
+                         
+                        2
+                      </h2>
+                      <div
+                        class="_path_3067b9"
+                      >
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="sailing"
+                              style="background-position: -200px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="diving"
+                              style="background-position: -250px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="forecasting"
+                              style="background-position: -300px 50px;"
+                            />
+                          </div>
+                          <span
+                            class="_pathMarker_53831d false"
+                            data-testid="runeMarker"
+                          />
+                        </div>
+                        <div
+                          class="_runeWrapper_d39d8d"
+                        >
+                          <div
+                            class="_runeBorder_d39d8d false"
+                            data-testid="rune"
+                          >
+                            <button
+                              class="_rune_d39d8d false"
+                              name="cloning"
+                              style="background-position: -350px 50px;"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="_talentPoints_fee7c0"
+                  >
+                    <p
+                      class="_pointsCounter_fee7c0"
+                    >
+                      0
+                       / 
+                      6
+                    </p>
+                    <p
+                      class="_pointsText_fee7c0"
+                    >
+                      Points Spent
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </body>
+      </html>
+    </div>
+  </body>,
+  "container": <div>
+    <html
+      lang="en"
+    >
+      <body>
+        <div
+          class="_background_d55e39"
+        >
+          <main
+            class="_main_d55e39"
+          >
+            <section
+              class="_container_d55e39"
+            >
+              <h1
+                class="_title_d55e39"
+              >
+                TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
+              </h1>
+              <div
+                class="_treeWrapper_068057"
+              >
+                <div
+                  class="_paths_cb9680"
+                >
+                  <div
+                    class="_pathWrapper_3067b9"
+                  >
+                    <h2
+                      class="_pathTitle_3067b9"
+                    >
+                      Talent Path
+                       
+                      1
+                    </h2>
+                    <div
+                      class="_path_3067b9"
+                    >
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="building"
+                            style="background-position: -0px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="cooking"
+                            style="background-position: -50px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="baking"
+                            style="background-position: -100px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="leading"
+                            style="background-position: -150px 50px;"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="_pathWrapper_3067b9"
+                  >
+                    <h2
+                      class="_pathTitle_3067b9"
+                    >
+                      Talent Path
+                       
+                      2
+                    </h2>
+                    <div
+                      class="_path_3067b9"
+                    >
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="sailing"
+                            style="background-position: -200px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="diving"
+                            style="background-position: -250px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="forecasting"
+                            style="background-position: -300px 50px;"
+                          />
+                        </div>
+                        <span
+                          class="_pathMarker_53831d false"
+                          data-testid="runeMarker"
+                        />
+                      </div>
+                      <div
+                        class="_runeWrapper_d39d8d"
+                      >
+                        <div
+                          class="_runeBorder_d39d8d false"
+                          data-testid="rune"
+                        >
+                          <button
+                            class="_rune_d39d8d false"
+                            name="cloning"
+                            style="background-position: -350px 50px;"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_talentPoints_fee7c0"
+                >
+                  <p
+                    class="_pointsCounter_fee7c0"
+                  >
+                    0
+                     / 
+                    6
+                  </p>
+                  <p
+                    class="_pointsText_fee7c0"
+                  >
+                    Points Spent
+                  </p>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </body>
+    </html>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -22,6 +22,7 @@ The functionality's specifics can be sum up as follows:
 - TS
 - Sass Modules
 - Context API
+- Vitest
 
 ### Setup
 

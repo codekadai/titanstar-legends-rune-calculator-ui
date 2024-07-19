@@ -1,5 +1,5 @@
 export * from "./Rune";
-export * from "./PathMarker";
+export * from "./RuneMarker";
 export * from "./Path";
 export * from "./Paths";
 export * from "./Points";

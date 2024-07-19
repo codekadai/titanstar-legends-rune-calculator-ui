@@ -1,17 +1,9 @@
 "use client";
 
 import styles from "./Rune.module.scss";
-import type { RuneType } from "./Rune.types";
-import type { PathType } from "../Path/Path.types";
+import type { RuneProps } from "./Rune.types";
 import { useHandleEvents } from "@/hooks";
-import { PathMarker } from "../PathMarker";
-
-type RuneProps = {
-  index: number;
-  pathIndex: number;
-  rune: RuneType;
-  path: PathType;
-};
+import { RuneMarker } from "../RuneMarker";
 
 export const Rune = (props: RuneProps) => {
   const { index, pathIndex, rune, path } = props;
@@ -26,7 +18,10 @@ export const Rune = (props: RuneProps) => {
 
   return (
     <div key={index} className={styles.runeWrapper}>
-      <div className={`${styles.runeBorder} ${rune.isActive && styles.active}`}>
+      <div
+        data-testid={"rune"}
+        className={`${styles.runeBorder} ${rune.isActive && styles.active}`}
+      >
         <button
           name={rune.name}
           className={`${styles.rune} ${rune.isActive && styles.active}`}
@@ -44,7 +39,7 @@ export const Rune = (props: RuneProps) => {
           }}
         />
       </div>
-      {index + 1 !== path.length && <PathMarker rune={rune} />}
+      {index + 1 !== path.length && <RuneMarker rune={rune} />}
     </div>
   );
 };
