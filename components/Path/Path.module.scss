@@ -1,0 +1,33 @@
+.pathWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.pathTitle {
+  width: 100%;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.path {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .pathWrapper {
+    flex-direction: row;
+  }
+
+  .pathTitle {
+    width: 30%;
+  }
+}

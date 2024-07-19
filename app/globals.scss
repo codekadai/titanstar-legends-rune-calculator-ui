@@ -1,0 +1,44 @@
+/* Color Palette: https://www.realtimecolors.com/?colors=ecf0f3-0f141a-a4bad0-37597b-6dabe8&fonts=Inter-Inter */
+
+:root {
+  --text: #ecf0f3;
+  --background: #0f141a;
+  --gray01: #4b4b4b;
+
+  --primary: #a4bad0;
+  --secondary: #37597b;
+  --accent: #6dabe8;
+
+  --runePathGapInactive: #1a1c1d;
+  --runePathGapActive: #303234;
+  --runeWidth: 50px;
+  --runeHeight: 50px;
+
+  --borderSize: 0.25rem;
+  --borderInactive: #515151;
+
+  --mainPaddingMobile: 2rem;
+  --mainPaddingDesktop: calc(var(--mainPaddingMobile) * 2);
+
+  --borderLinearInactive01: linear-gradient(
+    0deg,
+    var(--gray01),
+    50%,
+    var(--background)
+  );
+  --borderLinearInactive02: linear-gradient(var(--gray01), 50%, transparent 0);
+
+  --borderLinearActive01: linear-gradient(
+    0deg,
+    var(--accent),
+    50%,
+    var(--background)
+  );
+  --borderLinearActive02: linear-gradient(var(--accent), 50%, transparent 0);
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--text);
+}

@@ -1,0 +1,13 @@
+.pathMarker {
+  display: block;
+  height: calc(var(--runeWidth) / 2 - var(--borderSize) * 2);
+  width: 100%;
+  background: var(--runePathGapInactive);
+  box-shadow: 0 0 0.125rem var(--gray01);
+  transition: all 300ms ease-in-out;
+
+  &.activePathMarker {
+    box-shadow: 0 0 0.125rem var(--text);
+    background: var(--runePathGapActive);
+  }
+}
