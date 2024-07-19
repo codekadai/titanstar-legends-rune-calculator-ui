@@ -1,7 +1,7 @@
 import { useAppContext } from "@/context";
 import styles from "./Paths.module.scss";
 import { Path } from "../Path";
-import type { PathType } from "./Paths.types";
+import type { PathType } from "../Path";
 import { paths } from "@/labels";
 
 export const Paths = () => {
