@@ -10,6 +10,7 @@
 }
 
 .rune {
+  display: block;
   position: relative;
   width: var(--runeWidth);
   height: var(--runeHeight);
@@ -17,6 +18,7 @@
   cursor: pointer;
   transition: background-position 300ms ease-in-out;
   z-index: 1;
+  border: 0;
 }
 
 .runeBorder {

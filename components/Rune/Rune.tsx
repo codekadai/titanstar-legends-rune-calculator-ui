@@ -27,7 +27,8 @@ export const Rune = (props: RuneProps) => {
   return (
     <div key={index} className={styles.runeWrapper}>
       <div className={`${styles.runeBorder} ${rune.isActive && styles.active}`}>
-        <div
+        <button
+          name={rune.name}
           className={`${styles.rune} ${rune.isActive && styles.active}`}
           onClick={(event) => handleLeftClick(index, pathIndex, event)}
           onContextMenu={(event) => handleRightClick(index, pathIndex, event)}
@@ -41,7 +42,7 @@ export const Rune = (props: RuneProps) => {
                 : `-${pathIndex * 200 + index * 50}px 50px`
             }`,
           }}
-        ></div>
+        />
       </div>
       {index + 1 !== path.length && <PathMarker rune={rune} />}
     </div>
