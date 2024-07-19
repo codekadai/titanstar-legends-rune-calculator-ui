@@ -36,3 +36,7 @@ pnpm install
 ```sh
 pnpm run dev
 ```
+
+### Demo
+
+[Go to UI MVP](https://titanstar-legends-rune-calculator.vercel.app/)
