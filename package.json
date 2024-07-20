@@ -1,10 +1,10 @@
 {
   "name": "titanstar-legends-rune-calculator",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm run test && pnpm run coverage",
+    "build": "next build",
     "start": "next start",
     "test": "vitest run --update",
     "coverage": "vitest run --coverage",
@@ -28,7 +28,6 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "jsdom": "^24.1.0",
-    "typescript": "^5",
     "vitest": "^2.0.3"
   }
 }

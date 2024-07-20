@@ -52,9 +52,6 @@ devDependencies:
   jsdom:
     specifier: ^24.1.0
     version: 24.1.0
-  typescript:
-    specifier: ^5
-    version: 5.5.3
   vitest:
     specifier: ^2.0.3
     version: 2.0.3(@types/node@20.14.10)(jsdom@24.1.0)(sass@1.77.8)
