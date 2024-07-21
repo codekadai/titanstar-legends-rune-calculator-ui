@@ -3,42 +3,38 @@
 :root {
   --text: #ecf0f3;
   --background: #0f141a;
-  --gray01: #4b4b4b;
-
+  --gray-01: #4b4b4b;
   --primary: #a4bad0;
   --secondary: #37597b;
   --accent: #6dabe8;
-
-  --runePathGapInactive: #1a1c1d;
-  --runePathGapActive: #303234;
-  --runeWidth: 50px;
-  --runeHeight: 50px;
-
-  --borderSize: 0.25rem;
-  --borderInactive: #515151;
-
-  --mainPaddingMobile: 2rem;
-  --mainPaddingDesktop: calc(var(--mainPaddingMobile) * 2);
-
-  --borderLinearInactive01: linear-gradient(
+  --rune-path-gap-inactive: #1a1c1d;
+  --rune-path-gap-active: #303234;
+  --rune-width: 50px;
+  --rune-height: 50px;
+  --border-size: 0.25rem;
+  --main-padding-mobile: 2rem;
+  --border-linear-inactive-01: linear-gradient(
     0deg,
-    var(--gray01),
+    var(--gray-01),
     50%,
     var(--background)
   );
-  --borderLinearInactive02: linear-gradient(var(--gray01), 50%, transparent 0);
-
-  --borderLinearActive01: linear-gradient(
+  --border-linear-inactive-02: linear-gradient(
+    var(--gray-01),
+    50%,
+    transparent 0
+  );
+  --border-linear-active-01: linear-gradient(
     0deg,
     var(--accent),
     50%,
     var(--background)
   );
-  --borderLinearActive02: linear-gradient(var(--accent), 50%, transparent 0);
+  --border-linear-active-02: linear-gradient(var(--accent), 50%, transparent 0);
 }
 
 body {
   box-sizing: border-box;
-  margin: 0;
   color: var(--text);
+  margin: 0;
 }

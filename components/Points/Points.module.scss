@@ -1,23 +1,23 @@
 .talentPoints {
+  align-self: center;
+  background: var(--background);
   display: flex;
   flex-direction: column;
-  background: var(--background);
-  width: auto;
   height: 50%;
   padding: 1rem;
-  align-self: center;
+  width: auto;
 }
 
 .pointsCounter {
-  margin: 0;
   font-size: 1.25rem;
   font-weight: 500;
+  margin: 0;
   text-align: center;
 }
 
 .pointsText {
-  margin: 0;
-  text-align: center;
   color: var(--accent);
+  margin: 0;
   min-width: max-content;
+  text-align: center;
 }

@@ -1,11 +1,11 @@
 .treeWrapper {
   display: flex;
   flex-direction: column;
-  padding-block: 1.5rem;
   gap: 2rem;
+  padding-block: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .treeWrapper {
     flex-direction: row;
   }

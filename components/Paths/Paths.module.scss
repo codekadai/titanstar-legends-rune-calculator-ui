@@ -1,19 +1,19 @@
 .paths {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .emptyPaths {
-  margin: 0;
-  text-align: center;
   font-size: 1rem;
   font-weight: 500;
+  margin: 0;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .emptyPaths {
     text-align: left;
   }

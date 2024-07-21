@@ -1,10 +1,10 @@
 .main {
-  margin: 0;
-  padding: var(--mainPaddingMobile);
-  width: calc(100% - var(--mainPaddingMobile) * 2);
-  height: calc(100dvh - var(--mainPaddingMobile) * 2);
   background: url("/assets/talent-calc-bg.png");
   background-size: cover;
+  height: calc(100dvh - var(--main-padding-mobile) * 2);
+  margin: 0;
+  padding: var(--main-padding-mobile);
+  width: calc(100% - var(--main-padding-mobile) * 2);
 }
 
 .container {
@@ -13,17 +13,17 @@
 }
 
 .title {
-  margin: 0;
-  padding: 0.5rem;
   background: var(--background);
   font-size: 1.25rem;
-  text-align: center;
   font-weight: 500;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .container {
-    max-width: 1024px;
     margin: 0 auto;
+    max-width: 1024px;
   }
 }
