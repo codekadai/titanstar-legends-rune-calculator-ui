@@ -6,16 +6,20 @@ exports[`renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <main
-        class="_main_d55e39"
+        class="_main_cfb660"
       >
-        <section
-          class="_container_d55e39"
+        <header
+          class="_header_0a265d"
         >
           <h1
-            class="_title_d55e39"
+            class="_title_0a265d"
           >
             TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
           </h1>
+        </header>
+        <section
+          class="_container_a35809"
+        >
           <div
             class="_treeWrapper_068057"
           >
@@ -51,16 +55,20 @@ exports[`renders correctly 1`] = `
   </body>,
   "container": <div>
     <main
-      class="_main_d55e39"
+      class="_main_cfb660"
     >
-      <section
-        class="_container_d55e39"
+      <header
+        class="_header_0a265d"
       >
         <h1
-          class="_title_d55e39"
+          class="_title_0a265d"
         >
           TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
         </h1>
+      </header>
+      <section
+        class="_container_a35809"
+      >
         <div
           class="_treeWrapper_068057"
         >

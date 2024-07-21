@@ -1,3 +1,5 @@
+"use client";
+
 import { getPaths, getPlayers } from "@/api";
 import { PathType } from "@/components/Path/Path.types";
 import React, {

@@ -5,87 +5,75 @@ exports[`renders correctly 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <html
-        lang="en"
+      <section
+        class="_container_a35809"
       >
-        <body>
+        <div
+          class="_treeWrapper_068057"
+        >
           <div
-            class="_background_d55e39"
+            class="_paths_cb9680"
           >
-            <main
-              class="_main_d55e39"
+            <p
+              class="_emptyPaths_cb9680"
             >
-              <section
-                class="_container_d55e39"
-              >
-                <h1
-                  class="_title_d55e39"
-                >
-                  TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
-                </h1>
-                <div
-                  class="_treeWrapper_068057"
-                >
-                  <div
-                    class="_loaderWrapper_459d5b"
-                  >
-                    <p
-                      class="_loaderText_459d5b"
-                    >
-                      Please wait while we fetch your stats...
-                    </p>
-                    <div
-                      class="_loader_459d5b"
-                    />
-                  </div>
-                </div>
-              </section>
-            </main>
+              Sorry, there's no talent path available at this moment
+            </p>
           </div>
-        </body>
-      </html>
+          <div
+            class="_talentPoints_fee7c0"
+          >
+            <p
+              class="_pointsCounter_fee7c0"
+            >
+              0
+               / 
+              0
+            </p>
+            <p
+              class="_pointsText_fee7c0"
+            >
+              Points Spent
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   </body>,
   "container": <div>
-    <html
-      lang="en"
+    <section
+      class="_container_a35809"
     >
-      <body>
+      <div
+        class="_treeWrapper_068057"
+      >
         <div
-          class="_background_d55e39"
+          class="_paths_cb9680"
         >
-          <main
-            class="_main_d55e39"
+          <p
+            class="_emptyPaths_cb9680"
           >
-            <section
-              class="_container_d55e39"
-            >
-              <h1
-                class="_title_d55e39"
-              >
-                TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
-              </h1>
-              <div
-                class="_treeWrapper_068057"
-              >
-                <div
-                  class="_loaderWrapper_459d5b"
-                >
-                  <p
-                    class="_loaderText_459d5b"
-                  >
-                    Please wait while we fetch your stats...
-                  </p>
-                  <div
-                    class="_loader_459d5b"
-                  />
-                </div>
-              </div>
-            </section>
-          </main>
+            Sorry, there's no talent path available at this moment
+          </p>
         </div>
-      </body>
-    </html>
+        <div
+          class="_talentPoints_fee7c0"
+        >
+          <p
+            class="_pointsCounter_fee7c0"
+          >
+            0
+             / 
+            0
+          </p>
+          <p
+            class="_pointsText_fee7c0"
+          >
+            Points Spent
+          </p>
+        </div>
+      </div>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

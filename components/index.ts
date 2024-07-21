@@ -4,3 +4,4 @@ export * from "./Path";
 export * from "./Paths";
 export * from "./Points";
 export * from "./Tree";
+export * from "./Header";

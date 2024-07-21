@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./Points.module.scss";
 import { points } from "@/labels";
 import { useAppContext } from "@/context";

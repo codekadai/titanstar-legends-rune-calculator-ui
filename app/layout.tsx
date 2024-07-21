@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.scss";
-import styles from "./page.module.scss";
 import { customMetadata } from "@/labels";
 import { Providers } from "@/context/Providers";
 
@@ -20,9 +19,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className={styles.background}>
-          <Providers>{children}</Providers>
-        </div>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

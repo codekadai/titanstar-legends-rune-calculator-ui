@@ -1,8 +1,8 @@
 import React from "react";
 import { expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
-import RootLayout from "../app/layout";
-import Page from "../app/page";
+import RootLayout from "./layout";
+import Page from "./(with-layout)/page";
 
 vi.mock("next/font/google", () => ({
   Montserrat: () => ({
