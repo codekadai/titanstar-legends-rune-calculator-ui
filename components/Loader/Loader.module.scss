@@ -1,0 +1,31 @@
+.loaderWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.loader {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: var(--accent);
+  animation: loader 1s ease-in-out infinite;
+}
+
+.loaderText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@keyframes loader {
+  0% {
+    background: var(--accent);
+  }
+  50% {
+    background: var(--secondary);
+  }
+  100% {
+    background: var(--accent);
+  }
+}

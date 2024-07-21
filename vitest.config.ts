@@ -12,10 +12,16 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./test.setup.ts",
-    exclude: ["./components/**/index.ts", "./*.mjs", ...configDefaults.exclude],
+    exclude: [
+      "./**/__mocks__",
+      "./components/**/index.ts",
+      "./*.mjs",
+      ...configDefaults.exclude,
+    ],
     coverage: {
       provider: "v8",
       exclude: [
+        "./**/__mocks__",
         "./components/**/index.ts",
         "./*.mjs",
         ...coverageConfigDefaults.exclude,

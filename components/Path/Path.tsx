@@ -8,7 +8,7 @@ export const Path = (props: PathProps) => {
   const { path, pathIndex } = props;
   return (
     <div key={pathIndex} className={styles.pathWrapper}>
-      <h2 className={styles.pathTitle}>
+      <h2 data-testid={"pathTitle"} className={styles.pathTitle}>
         {paths.talentPath} {pathIndex + 1}
       </h2>
       <div key={pathIndex} className={styles.path}>

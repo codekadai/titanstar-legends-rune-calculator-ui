@@ -1,5 +1,26 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Paths tests > renders paths 1`] = `
+[
+  <h2
+    class="_pathTitle_3067b9"
+    data-testid="pathTitle"
+  >
+    Talent Path
+     
+    1
+  </h2>,
+  <h2
+    class="_pathTitle_3067b9"
+    data-testid="pathTitle"
+  >
+    Talent Path
+     
+    2
+  </h2>,
+]
+`;
+
 exports[`Paths tests > shows a message when there are no paths 1`] = `
 <p
   class="_emptyPaths_cb9680"
