@@ -23,6 +23,8 @@ The functionality's specifics can be sum up as follows:
 - Sass Modules
 - Context API
 - Vitest
+- Stylelint
+- Husky
 
 ### Setup
 
@@ -40,4 +42,12 @@ pnpm run dev
 
 ### Demo
 
-[Go to UI MVP](https://titanstar-legends-rune-calculator.vercel.app/)
+- [Go to UI MVP](https://titanstar-legends-rune-calculator.vercel.app/)
+- [Go to API MVP](https://titanstar-legends-rune-calculator.vercel-api.app/api/paths)
+
+### Next Steps
+
+- Add Storybook to document components
+- Add Atomic Design approach to the components
+- Add E2E test with Cypress and Playwright
+- Update deployment to AWS
