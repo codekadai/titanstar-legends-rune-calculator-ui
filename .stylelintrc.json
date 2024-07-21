@@ -5,7 +5,7 @@
   "rules": {
     "order/properties-alphabetical-order": true,
     "block-no-empty": null,
-    "unit-whitelist": ["em", "rem", "s", "px"],
+    "unit-allowed-list": ["em", "rem", "s", "px", "%", "deg", "ms", "dvh"],
     "scss/at-rule-no-unknown": [
       true,
       {
