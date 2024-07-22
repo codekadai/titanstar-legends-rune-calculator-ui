@@ -19,7 +19,7 @@ The functionality's specifics can be sum up as follows:
 ### Tech Stack
 
 - NextJS (App Router)
-- PNPM
+- pnpm
 - TS
 - Sass Modules
 - Context API
