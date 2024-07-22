@@ -1,21 +1,27 @@
-import { MAX_POINTS } from "@/constants";
 import { useAppContext } from "@/context";
 import { useCallback, useState } from "react";
 
 export const useHandleEvents = () => {
   const {
     currentSpentPoints,
+    talentPoints,
     currentPaths,
+    focusIndex,
+    hoverIndex,
     setCurrentSpentPoints,
     setCurrentPaths,
+    setFocusIndex,
+    setHoverIndex,
   } = useAppContext();
 
   const [tapEndTriggered, setTapEndTriggered] = useState<boolean>(false);
+  const [enterDownTriggered, setEnterDownTriggered] = useState<boolean>(false);
 
   const canActivate = useCallback(
     (index: number, pathIndex: number): boolean => {
       const path = currentPaths[pathIndex];
       const rune = path[index];
+
       return (
         !rune.isActive &&
         (rune.dependencies.length === 0 ||
@@ -27,14 +33,13 @@ export const useHandleEvents = () => {
 
   const activateRune = useCallback(
     (index: number, pathIndex: number) => {
-      if (currentSpentPoints < MAX_POINTS && canActivate(index, pathIndex)) {
+      if (currentSpentPoints < talentPoints && canActivate(index, pathIndex)) {
         const newPaths = [...currentPaths];
         const newUsedPoints = currentSpentPoints + 1;
         newPaths[pathIndex][index].isActive = true;
-        newPaths[pathIndex][index].isHovered =
-          !currentPaths[pathIndex][index].isHovered;
         setCurrentPaths(newPaths);
         setCurrentSpentPoints(newUsedPoints);
+        setHoverIndex({ index, pathIndex });
       }
     },
     [
@@ -43,6 +48,8 @@ export const useHandleEvents = () => {
       currentSpentPoints,
       setCurrentPaths,
       setCurrentSpentPoints,
+      setHoverIndex,
+      talentPoints,
     ]
   );
 
@@ -55,30 +62,35 @@ export const useHandleEvents = () => {
         const newPaths = [...currentPaths];
         const newUsedPoints = currentSpentPoints - 1;
         newPaths[pathIndex][index].isActive = false;
-        newPaths[pathIndex][index].isHovered =
-          !currentPaths[pathIndex][index].isHovered;
         setCurrentPaths(newPaths);
         setCurrentSpentPoints(newUsedPoints);
+        setHoverIndex({ index: -1, pathIndex: -1 });
       }
     },
-    [currentPaths, currentSpentPoints, setCurrentPaths, setCurrentSpentPoints]
+    [
+      currentPaths,
+      currentSpentPoints,
+      setCurrentPaths,
+      setCurrentSpentPoints,
+      setHoverIndex,
+    ]
   );
 
-  const handleHover = useCallback(
-    (index: number, pathIndex: number) => {
-      const newPaths = [...currentPaths];
-      const newUsedPoints = currentSpentPoints;
-      newPaths[pathIndex][index].isHovered =
-        !currentPaths[pathIndex][index].isHovered;
-      setCurrentPaths(newPaths);
-      setCurrentSpentPoints(newUsedPoints);
+  const handleFocus = useCallback(
+    (index: number, pathIndex: number, event: React.FocusEvent) => {
+      if (tapEndTriggered || enterDownTriggered) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
+      setFocusIndex({ index, pathIndex });
     },
-    [currentPaths, currentSpentPoints, setCurrentPaths, setCurrentSpentPoints]
+    [enterDownTriggered, setFocusIndex, tapEndTriggered]
   );
 
   const handleLeftClick = useCallback(
     (index: number, pathIndex: number, event: React.MouseEvent) => {
-      if (tapEndTriggered) {
+      if (tapEndTriggered || enterDownTriggered) {
         event.preventDefault();
         event.stopPropagation();
         return;
@@ -86,7 +98,7 @@ export const useHandleEvents = () => {
       !currentPaths[pathIndex][index].isActive &&
         activateRune(index, pathIndex);
     },
-    [activateRune, currentPaths, tapEndTriggered]
+    [activateRune, currentPaths, enterDownTriggered, tapEndTriggered]
   );
 
   const handleRightClick = useCallback(
@@ -105,22 +117,26 @@ export const useHandleEvents = () => {
         event.stopPropagation();
         return;
       }
-      handleHover(index, pathIndex);
+      setHoverIndex({ index, pathIndex });
     },
-    [handleHover, tapEndTriggered]
+    [setHoverIndex, tapEndTriggered]
   );
 
   const handleMouseOut = useCallback(
-    (index: number, pathIndex: number, event: React.MouseEvent) => {
+    (event: React.MouseEvent) => {
       if (tapEndTriggered) {
         event.preventDefault();
         event.stopPropagation();
         return;
       }
-      handleHover(index, pathIndex);
+      setHoverIndex({ index: -1, pathIndex: -1 });
     },
-    [handleHover, tapEndTriggered]
+    [setHoverIndex, tapEndTriggered]
   );
+
+  const handleMouseDown = useCallback((event: React.MouseEvent) => {
+    event.preventDefault();
+  }, []);
 
   const handleTap = useCallback(
     (index: number, pathIndex: number) => {
@@ -132,13 +148,32 @@ export const useHandleEvents = () => {
     [activateRune, currentPaths, deactivateRune]
   );
 
+  const handleEnter = useCallback(
+    (index: number, pathIndex: number, event: React.KeyboardEvent) => {
+      if (event.key === "Enter") {
+        setEnterDownTriggered(true);
+        !currentPaths[pathIndex][index].isActive
+          ? activateRune(index, pathIndex)
+          : deactivateRune(index, pathIndex);
+      }
+    },
+    [activateRune, currentPaths, deactivateRune]
+  );
+
   return {
     currentSpentPoints,
     currentPaths,
+    talentPoints,
+    focusIndex,
+    hoverIndex,
     handleLeftClick,
     handleRightClick,
     handleMouseOver,
     handleMouseOut,
+    handleMouseDown,
     handleTap,
+    handleEnter,
+    handleFocus,
+    canActivate,
   };
 };

@@ -8,11 +8,13 @@ exports[`renders correctly 1`] = `
       <html
         lang="en"
       >
-        <body>
-          <section
-            class="_container_a35809"
+        <body
+          class="undefined _body_f0e811"
+        >
+          <main
+            class="_container_af625a"
           >
-            <div
+            <section
               class="_treeWrapper_068057"
             >
               <div
@@ -27,8 +29,8 @@ exports[`renders correctly 1`] = `
                   class="_loader_459d5b"
                 />
               </div>
-            </div>
-          </section>
+            </section>
+          </main>
         </body>
       </html>
     </div>
@@ -37,11 +39,13 @@ exports[`renders correctly 1`] = `
     <html
       lang="en"
     >
-      <body>
-        <section
-          class="_container_a35809"
+      <body
+        class="undefined _body_f0e811"
+      >
+        <main
+          class="_container_af625a"
         >
-          <div
+          <section
             class="_treeWrapper_068057"
           >
             <div
@@ -56,8 +60,8 @@ exports[`renders correctly 1`] = `
                 class="_loader_459d5b"
               />
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
       </body>
     </html>
   </div>,

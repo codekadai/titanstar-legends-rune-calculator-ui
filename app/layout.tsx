@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.scss";
 import { customMetadata } from "@/labels";
 import { Providers } from "@/context/Providers";
+import styles from "./layout.module.scss";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={`${montserrat.className} ${styles.body}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

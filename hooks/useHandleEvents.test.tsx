@@ -4,69 +4,9 @@ import { useHandleEvents } from "./";
 import { getPaths, getPlayers } from "@/api";
 import { FC } from "react";
 import { AppProvider } from "@/context";
+import { mockPaths, mockPlayers } from "@/__mocks__";
 
 vi.mock("@/api");
-
-const mockPaths = [
-  [
-    {
-      name: "building",
-      isActive: false,
-      isHovered: false,
-      dependencies: [],
-    },
-    {
-      name: "cooking",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building"],
-    },
-    {
-      name: "baking",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building", "cooking"],
-    },
-    {
-      name: "leading",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building", "cooking", "baking"],
-    },
-  ],
-  [
-    {
-      name: "sailing",
-      isActive: false,
-      isHovered: false,
-      dependencies: [],
-    },
-    {
-      name: "diving",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing"],
-    },
-    {
-      name: "forecasting",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing", "diving"],
-    },
-    {
-      name: "cloning",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing", "diving", "forecasting"],
-    },
-  ],
-];
-
-const mockPlayers = [
-  {
-    talentPoints: 5,
-  },
-];
 
 describe("useHandleEvents tests", () => {
   let mockEvent: any = {};
@@ -78,13 +18,16 @@ describe("useHandleEvents tests", () => {
     mockEvent = {
       preventDefault: vi.fn(),
       stopPropagation: vi.fn(),
+      key: "Enter",
+      code: "Enter",
+      charCode: 13,
     };
     wrapper = ({ children }: { children?: React.ReactNode }) => (
       <AppProvider>{children}</AppProvider>
     );
   });
 
-  it("handle handleLeftClick method", async () => {
+  it("checks handleLeftClick method", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
@@ -96,7 +39,7 @@ describe("useHandleEvents tests", () => {
     expect(result.current.currentPaths[0][0].isActive).toBe(true);
   });
 
-  it("handle handleRightClick method", async () => {
+  it("checks handleRightClick method", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
@@ -108,31 +51,83 @@ describe("useHandleEvents tests", () => {
     expect(result.current.currentPaths[0][0].isActive).toBe(false);
   });
 
-  it("handle handleMouseOver method", async () => {
+  it("checks handleMouseOver method", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
       expect(result.current.currentPaths.length).toBeGreaterThan(0);
     });
 
-    expect(result.current.currentPaths[0][0].isHovered).toBe(false);
+    expect(result.current.hoverIndex).toStrictEqual({
+      index: -1,
+      pathIndex: -1,
+    });
     act(() => result.current.handleMouseOver(0, 0, mockEvent));
-    expect(result.current.currentPaths[0][0].isHovered).toBe(true);
+    expect(result.current.hoverIndex).toStrictEqual({ index: 0, pathIndex: 0 });
   });
 
-  it("handle handleMouseOut method", async () => {
+  it("checks handleMouseOut method", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
       expect(result.current.currentPaths.length).toBeGreaterThan(0);
     });
 
-    expect(result.current.currentPaths[0][0].isHovered).toBe(true);
-    act(() => result.current.handleMouseOut(0, 0, mockEvent));
-    expect(result.current.currentPaths[0][0].isHovered).toBe(false);
+    act(() => result.current.handleMouseOver(0, 0, mockEvent));
+    expect(result.current.hoverIndex).toStrictEqual({ index: 0, pathIndex: 0 });
+    act(() => result.current.handleMouseOut(mockEvent));
+    expect(result.current.hoverIndex).toStrictEqual({
+      index: -1,
+      pathIndex: -1,
+    });
   });
 
-  it("handle handleTap method to activate a rune", async () => {
+  it("checks handleFocus method", async () => {
+    const { result } = renderHook(() => useHandleEvents(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.currentPaths.length).toBeGreaterThan(0);
+    });
+
+    expect(result.current.focusIndex).toStrictEqual({
+      index: -1,
+      pathIndex: -1,
+    });
+    act(() => result.current.handleFocus(0, 0, mockEvent));
+    expect(result.current.focusIndex).toStrictEqual({ index: 0, pathIndex: 0 });
+
+    act(() => result.current.handleEnter(0, 0, mockEvent));
+    act(() => result.current.handleFocus(0, 0, mockEvent));
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
+    expect(mockEvent.stopPropagation).toHaveBeenCalled();
+  });
+
+  it("checks handleTap method to activate a rune", async () => {
+    const { result } = renderHook(() => useHandleEvents(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.currentPaths.length).toBeGreaterThan(0);
+    });
+
+    act(() => result.current.handleTap(0, 0));
+    expect(result.current.currentPaths[0][0].isActive).toBe(false);
+    act(() => result.current.handleTap(0, 0));
+    expect(result.current.currentPaths[0][0].isActive).toBe(true);
+  });
+
+  it("checks handleTap method to deactivate a rune", async () => {
+    const { result } = renderHook(() => useHandleEvents(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.currentPaths.length).toBeGreaterThan(0);
+    });
+
+    expect(result.current.currentPaths[0][0].isActive).toBe(true);
+    act(() => result.current.handleTap(0, 0));
+    expect(result.current.currentPaths[0][0].isActive).toBe(false);
+  });
+
+  it("checks handleEnter method to activate a rune", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
@@ -140,11 +135,11 @@ describe("useHandleEvents tests", () => {
     });
 
     expect(result.current.currentPaths[0][0].isActive).toBe(false);
-    act(() => result.current.handleTap(0, 0));
+    act(() => result.current.handleEnter(0, 0, mockEvent));
     expect(result.current.currentPaths[0][0].isActive).toBe(true);
   });
 
-  it("handle handleTap method to deactivate a rune", async () => {
+  it("checks handleEnter method to deactivate a rune", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
@@ -152,11 +147,22 @@ describe("useHandleEvents tests", () => {
     });
 
     expect(result.current.currentPaths[0][0].isActive).toBe(true);
-    act(() => result.current.handleTap(0, 0));
+    act(() => result.current.handleEnter(0, 0, mockEvent));
     expect(result.current.currentPaths[0][0].isActive).toBe(false);
   });
 
-  it("handle desktop blocking flag", async () => {
+  it("checks handleMouseDown method to preventDefault", async () => {
+    const { result } = renderHook(() => useHandleEvents(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.currentPaths.length).toBeGreaterThan(0);
+    });
+
+    act(() => result.current.handleMouseDown(mockEvent));
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
+  });
+
+  it("handles desktop blocking flag", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {
@@ -166,11 +172,11 @@ describe("useHandleEvents tests", () => {
     act(() => result.current.handleTap(0, 0));
     act(() => result.current.handleLeftClick(0, 0, mockEvent));
     act(() => result.current.handleMouseOver(0, 0, mockEvent));
-    act(() => result.current.handleMouseOut(0, 0, mockEvent));
+    act(() => result.current.handleMouseOut(mockEvent));
     expect(result.current.currentPaths[0][0].isActive).toBe(true);
   });
 
-  it("handle canActivate method", async () => {
+  it("checks canActivate method", async () => {
     const { result } = renderHook(() => useHandleEvents(), { wrapper });
 
     await waitFor(() => {

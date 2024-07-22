@@ -20,10 +20,14 @@ interface AppContextType {
   currentPaths: PathType[];
   talentPoints: number;
   isLoading: boolean;
+  focusIndex: Record<string, number>;
+  hoverIndex: Record<string, number>;
   setCurrentSpentPoints: React.Dispatch<React.SetStateAction<number>>;
   setCurrentPaths: React.Dispatch<React.SetStateAction<PathType[]>>;
   setTalentPoints: React.Dispatch<React.SetStateAction<number>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setFocusIndex: React.Dispatch<React.SetStateAction<Record<string, number>>>;
+  setHoverIndex: React.Dispatch<React.SetStateAction<Record<string, number>>>;
 }
 
 const defaultContextValue: AppContextType = {
@@ -31,6 +35,8 @@ const defaultContextValue: AppContextType = {
   currentPaths: [],
   talentPoints: 0,
   isLoading: false,
+  focusIndex: { index: -1, pathIndex: -1 },
+  hoverIndex: { index: -1, pathIndex: -1 },
   /* v8 ignore next */
   setCurrentSpentPoints: () => {},
   /* v8 ignore next */
@@ -39,6 +45,10 @@ const defaultContextValue: AppContextType = {
   setTalentPoints: () => {},
   /* v8 ignore next */
   setIsLoading: () => {},
+  /* v8 ignore next */
+  setFocusIndex: () => {},
+  /* v8 ignore next */
+  setHoverIndex: () => {},
 };
 
 const AppContext = createContext<AppContextType>(defaultContextValue);
@@ -47,6 +57,14 @@ export const AppProvider: FC<AppContextProviderProps> = ({ children }) => {
   const [currentSpentPoints, setCurrentSpentPoints] = useState<number>(0);
   const [currentPaths, setCurrentPaths] = useState<PathType[]>([]);
   const [talentPoints, setTalentPoints] = useState<number>(0);
+  const [focusIndex, setFocusIndex] = useState<Record<string, number>>({
+    index: -1,
+    pathIndex: -1,
+  });
+  const [hoverIndex, setHoverIndex] = useState<Record<string, number>>({
+    index: -1,
+    pathIndex: -1,
+  });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -82,12 +100,23 @@ export const AppProvider: FC<AppContextProviderProps> = ({ children }) => {
       currentPaths,
       talentPoints,
       isLoading,
+      focusIndex,
+      hoverIndex,
       setCurrentSpentPoints,
       setCurrentPaths,
       setTalentPoints,
       setIsLoading,
+      setFocusIndex,
+      setHoverIndex,
     }),
-    [currentSpentPoints, currentPaths, talentPoints, isLoading]
+    [
+      currentSpentPoints,
+      currentPaths,
+      talentPoints,
+      isLoading,
+      focusIndex,
+      hoverIndex,
+    ]
   );
 
   return (

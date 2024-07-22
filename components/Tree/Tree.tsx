@@ -10,7 +10,7 @@ export const Tree = () => {
   const { isLoading } = useAppContext();
 
   return (
-    <div className={styles.treeWrapper}>
+    <section className={styles.treeWrapper}>
       {isLoading ? (
         <Loader />
       ) : (
@@ -19,6 +19,6 @@ export const Tree = () => {
           <Points />
         </>
       )}
-    </div>
+    </section>
   );
 };

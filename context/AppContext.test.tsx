@@ -3,69 +3,9 @@ import { act, renderHook, waitFor } from "@testing-library/react";
 import { AppProvider, useAppContext } from "@/context";
 import { getPaths, getPlayers } from "@/api";
 import { FC } from "react";
+import { mockPaths, mockPlayers } from "@/__mocks__";
 
 vi.mock("@/api");
-
-const mockPaths = [
-  [
-    {
-      name: "building",
-      isActive: false,
-      isHovered: false,
-      dependencies: [],
-    },
-    {
-      name: "cooking",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building"],
-    },
-    {
-      name: "baking",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building", "cooking"],
-    },
-    {
-      name: "leading",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["building", "cooking", "baking"],
-    },
-  ],
-  [
-    {
-      name: "sailing",
-      isActive: false,
-      isHovered: false,
-      dependencies: [],
-    },
-    {
-      name: "diving",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing"],
-    },
-    {
-      name: "forecasting",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing", "diving"],
-    },
-    {
-      name: "cloning",
-      isActive: false,
-      isHovered: false,
-      dependencies: ["sailing", "diving", "forecasting"],
-    },
-  ],
-];
-
-const mockPlayers = [
-  {
-    talentPoints: 5,
-  },
-];
 
 describe("AppContext tests", () => {
   let wrapper: FC;

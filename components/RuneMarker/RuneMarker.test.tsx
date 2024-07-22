@@ -10,7 +10,6 @@ describe("RuneMarker tests", () => {
     const props: RuneMarkerProps = {
       rune: {
         name: "test",
-        isHovered: false,
         isActive: true,
         dependencies: [],
       },

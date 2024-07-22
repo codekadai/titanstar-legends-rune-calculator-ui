@@ -5,6 +5,7 @@ exports[`Paths tests > renders paths 1`] = `
   <h2
     class="_pathTitle_3067b9"
     data-testid="pathTitle"
+    tabindex="0"
   >
     Talent Path
      
@@ -13,6 +14,7 @@ exports[`Paths tests > renders paths 1`] = `
   <h2
     class="_pathTitle_3067b9"
     data-testid="pathTitle"
+    tabindex="0"
   >
     Talent Path
      

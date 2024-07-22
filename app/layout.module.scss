@@ -1,8 +1,8 @@
-.main {
+.body {
   background: url("/assets/talent-calc-bg.png");
   background-size: cover;
-  height: calc(100dvh - var(--main-padding-mobile) * 2);
+  height: 100dvh;
   margin: 0;
   padding: var(--main-padding-mobile);
-  width: calc(100% - var(--main-padding-mobile) * 2);
+  width: 100%;
 }

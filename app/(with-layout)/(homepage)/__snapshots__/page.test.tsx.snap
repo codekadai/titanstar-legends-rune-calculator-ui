@@ -5,15 +5,6 @@ exports[`renders correctly 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="_header_0a265d"
-      >
-        <h1
-          class="_title_0a265d"
-        >
-          TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
-        </h1>
-      </header>
       <main
         class="_container_af625a"
       >
@@ -50,15 +41,6 @@ exports[`renders correctly 1`] = `
     </div>
   </body>,
   "container": <div>
-    <header
-      class="_header_0a265d"
-    >
-      <h1
-        class="_title_0a265d"
-      >
-        TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
-      </h1>
-    </header>
     <main
       class="_container_af625a"
     >

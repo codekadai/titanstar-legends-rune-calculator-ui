@@ -1,7 +1,7 @@
 import React from "react";
 import { expect, it } from "vitest";
 import { render } from "@testing-library/react";
-import Home from "./page";
+import Home from "./(homepage)/page";
 import WithLayout from "./layout";
 
 it("renders correctly", () => {
